@@ -67,15 +67,14 @@ export default function LoginPage() {
         <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
           <div className="flex items-center gap-2 mb-2">
             <Sparkles size={15} className="text-blue-500" />
-            <p className="text-sm font-semibold text-blue-700">Try the demo</p>
+            <p className="text-sm font-semibold text-blue-700">
+              Explore the app instantly — no sign up needed
+            </p>
           </div>
-          <p className="text-xs text-blue-500 mb-3">
-            Explore the app instantly — no sign up needed.
-          </p>
           <Button
             onClick={handleDemoLogin}
             disabled={demoLoading || loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm"
+            className="w-full bg-white-600 hover:bg-blue-700 text-blue text-sm border border-blue-600"
           >
             {demoLoading ? "Loading demo..." : "✨ Try demo account"}
           </Button>
@@ -122,7 +121,7 @@ export default function LoginPage() {
           <Button
             onClick={handleLogin}
             disabled={loading || demoLoading || !email || !password}
-            className="w-full bg-gray-900 hover:bg-gray-800 mt-2"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm"
           >
             {loading ? "Logging in..." : "Log in"}
           </Button>
