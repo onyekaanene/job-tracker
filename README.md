@@ -4,6 +4,8 @@
 
 **🔗 Live Link:** [job-tracker.onyekaanene.com](https://job-tracker.onyekaanene.com) &nbsp;|&nbsp; **📂 Repo:** [github.com/onyekaanene/job-tracker](https://github.com/onyekaanene/job-tracker)
 
+> 🚀 **No sign up needed** — click **Try Demo Account** on the login page to explore instantly.
+
 ---
 
 ## 🚀 Why I Built This
