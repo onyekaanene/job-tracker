@@ -28,6 +28,20 @@ This project also gave me the opportunity to work with a modern full-stack archi
 
 ---
 
+## 📸 Screenshots
+
+### Desktop
+![Login Page](login.png)
+![Sign Up Page](signup.png)
+![Dashboard](dashboard-web.png)
+![Kanban Board](kanban-web.png)
+
+### Mobile
+![Login – Mobile](login-mobile.png)
+![Dashboard – Mobile](dashboard-mobile.png)
+
+---
+
 ## 🎬 App Walkthrough
 
 ### Dashboard — Your pipeline at a glance
