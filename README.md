@@ -34,9 +34,9 @@ This project also gave me the opportunity to work with a modern full-stack archi
 
 ### Desktop
 ![Login Page](login.png)
-![Sign Up Page](signup.png)
 ![Dashboard](dashboard-web.png)
 ![Kanban Board](kanban-web.png)
+![Sign Up Page](signup.png)
 
 ### Mobile
 ![Dashboard & Kanban Board – Mobile](dashboard-mobile.png)
