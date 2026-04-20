@@ -57,10 +57,10 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="flex items-center gap-2 mb-8">
           <Briefcase className="text-blue-600" size={24} />
-          <span className="font-bold text-gray-900 text-xl">JobTracker</span>
+          <span className="font-bold text-gray-900 text-2xl">JobTracker</span>
         </div>
 
-        <h1 className="text-2xl font-bold text-gray-900 mb-1">Welcome back</h1>
+        <h1 className="text-xl font-bold text-gray-900 mb-1">Welcome back</h1>
         <p className="text-gray-500 text-sm mb-6">Log in to your account</p>
 
         {/* Demo Banner */}
