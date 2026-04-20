@@ -37,8 +37,8 @@ This project also gave me the opportunity to work with a modern full-stack archi
 ![Kanban Board](kanban-web.png)
 
 ### Mobile
-![Login – Mobile](login-mobile.png)
-![Dashboard – Mobile](dashboard-mobile.png)
+![Login – Mobile](login-mobile.jpg)
+![Dashboard – Mobile](dashboard-mobile.jpg)
 
 ---
 
