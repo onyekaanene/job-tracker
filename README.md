@@ -8,7 +8,7 @@
 
 ## 🚀 Why I Built This
 
-While actively job hunting as a Frontend Engineer, I found myself losing track of applications across spreadsheets, browser tabs, and sticky notes. I built JobTracker to solve that — a clean, fast, real-world app I actually use every day.
+While actively job hunting as a Software Engineer, I found myself losing track of applications across spreadsheets, browser tabs, and sticky notes. I built JobTracker to solve that — a clean, fast, real-world app I actually use every day.
 
 This project also gave me the opportunity to work with a modern full-stack architecture from scratch: **Next.js 14 App Router, TypeScript, Supabase Auth + PostgreSQL, and Zustand** — the kind of stack startups are shipping with right now.
 
