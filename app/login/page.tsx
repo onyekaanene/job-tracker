@@ -52,19 +52,19 @@ export default function LoginPage() {
   const handleDemoLogin = () => signIn(DEMO_EMAIL, DEMO_PASSWORD, true);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
-      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm w-full max-w-md p-8">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-2">
+      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm w-full max-w-md pl-8 pr-8 pt-6 pb-4">
         {/* Logo */}
-        <div className="flex items-center gap-2 mb-8">
+        <div className="flex items-center gap-2 mb-5">
           <Briefcase className="text-blue-600" size={24} />
           <span className="font-bold text-gray-900 text-2xl">JobTracker</span>
         </div>
 
-        <h1 className="text-xl font-bold text-gray-900 mb-1">Welcome back</h1>
-        <p className="text-gray-500 text-sm mb-6">Log in to your account</p>
+        <h1 className="text-xl font-bold text-gray-900 mb-0.5">Welcome back</h1>
+        <p className="text-gray-500 text-sm mb-4">Log in to your account</p>
 
         {/* Demo Banner */}
-        <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
+        <div className="bg-blue-50 border border-blue-100 rounded-xl pl-4 pr-4 pt-2 pb-3 mb-4">
           <div className="flex items-center gap-2 mb-2">
             <Sparkles size={15} className="text-blue-500" />
             <p className="text-sm font-semibold text-blue-700">
@@ -81,7 +81,7 @@ export default function LoginPage() {
         </div>
 
         {/* Divider */}
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mb-4">
           <div className="flex-1 h-px bg-gray-200" />
           <span className="text-xs text-gray-400">or sign in with email</span>
           <div className="flex-1 h-px bg-gray-200" />
@@ -127,7 +127,7 @@ export default function LoginPage() {
           </Button>
         </div>
 
-        <p className="text-sm text-gray-500 text-center mt-6">
+        <p className="text-sm text-gray-500 text-center mt-4">
           Don't have an account?{" "}
           <Link
             href="/signup"
@@ -139,7 +139,7 @@ export default function LoginPage() {
       </div>
 
       {/* Credit */}
-      <p className="text-xs text-gray-400 mt-6">
+      <p className="text-xs text-gray-400 mt-3">
         Designed & developed by{" "}
         <span className="text-gray-500 font-medium">Onyekachukwu Anene</span>
       </p>
