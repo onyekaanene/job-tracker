@@ -231,7 +231,7 @@ Currently building production-ready mobile and web apps. Available for freelance
 
 [![GitHub](https://img.shields.io/badge/GitHub-onyekaanene-181717?style=flat&logo=github)](https://github.com/onyekaanene)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/onyekachukwu-anene)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=flat)](https://github.com/onyekaanene/projects)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=flat)](https://www.onyekaanene.com/projects)
 
 ---
 
