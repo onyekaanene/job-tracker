@@ -115,6 +115,50 @@ job-tracker/
 
 ---
 
+---
+
+## 🗺️ Roadmap
+
+### ✅ Completed
+- [x] Email / password authentication with Supabase Auth
+- [x] Protected routes — unauthenticated users redirected to login
+- [x] Kanban board with drag-and-drop across 5 stages
+- [x] Add / delete job applications via modal form
+- [x] Dashboard with live stats cards and bar chart
+- [x] Recent applications list on dashboard
+- [x] Persistent storage with PostgreSQL via Supabase
+- [x] Row Level Security — users only access their own data
+- [x] Fully responsive — mobile and desktop
+- [x] One-click demo account for instant access
+- [x] Settings page with password update
+- [x] Deployed live on Vercel
+
+### 🔜 Coming Soon
+- [ ] Google OAuth login
+- [ ] Edit application details inline
+- [ ] Notes and activity timeline per application
+- [ ] Follow-up reminders and deadline alerts
+- [ ] CSV export of all applications
+- [ ] React Native mobile companion app
+
+---
+
+## 🙏 Acknowledgements
+
+This project was built with the help of some excellent open source tools and communities:
+
+- [Next.js](https://nextjs.org) — for the most seamless React framework experience
+- [Supabase](https://supabase.com) — for making auth and PostgreSQL incredibly approachable
+- [shadcn/ui](https://ui.shadcn.com) — for beautiful, accessible UI components that don't get in your way
+- [Tailwind CSS](https://tailwindcss.com) — for making styling fast and consistent
+- [Recharts](https://recharts.org) — for composable and easy-to-use React charts
+- [@hello-pangea/dnd](https://github.com/hello-pangea/dnd) — for smooth drag-and-drop interactions
+- [Zustand](https://zustand-demo.pmnd.rs) — for keeping global state simple and boilerplate-free
+- [Lucide Icons](https://lucide.dev) — for clean, consistent iconography
+- [Vercel](https://vercel.com) — for effortless deployment and hosting
+
+---
+
 ## 🏃 Running Locally
 
 ### Prerequisites
@@ -182,23 +226,14 @@ The app is deployed on **Vercel** with environment variables configured in the V
 
 ---
 
-## 🗺️ Roadmap
-
-- [ ] Google OAuth login
-- [ ] CSV export of all applications
-- [ ] Follow-up reminders and deadline alerts
-- [ ] Notes and activity timeline per application
-- [ ] React Native mobile companion app
-
----
-
 ## 👨‍💻 Author
 
-**Onyekachukwu Anene** — Software Engineer (Frontend - React/Next.js, React Native)
+**Built with ❤️ by Onyekachukwu Anene** — Software Engineer (Frontend - React/Next.js, React Native).
+Currently building production-ready mobile and web apps. Available for freelance and full-time opportunities.
 
 [![GitHub](https://img.shields.io/badge/GitHub-onyekaanene-181717?style=flat&logo=github)](https://github.com/onyekaanene)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/onyekachukwu-anene)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=flat)](https://github.com/onyekaanene)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=flat)](https://github.com/onyekaanene/projects)
 
 ---
 
