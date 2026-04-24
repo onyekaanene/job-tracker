@@ -115,8 +115,6 @@ job-tracker/
 
 ---
 
----
-
 ## 🗺️ Roadmap
 
 ### ✅ Completed
