@@ -226,8 +226,7 @@ The app is deployed on **Vercel** with environment variables configured in the V
 
 ## 👨‍💻 Author
 
-**Built with ❤️ by Onyekachukwu Anene** — Software Engineer (Frontend - React/Next.js, React Native).
-Currently building production-ready mobile and web apps. Available for freelance and full-time opportunities.
+**Built with ❤️ by Onyekachukwu Anene** — Software Engineer (Applied AI & SaaS) | Building AI-powered web & mobile products. Available for freelance and full-time opportunities.
 
 [![GitHub](https://img.shields.io/badge/GitHub-onyekaanene-181717?style=flat&logo=github)](https://github.com/onyekaanene)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/onyekachukwu-anene)
