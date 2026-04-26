@@ -34,13 +34,13 @@ This project also gave me the opportunity to work with a modern full-stack archi
 ## 📸 Screenshots
 
 ### Desktop
-![Login Page](login.png)
-![Dashboard](dashboard-web.png)
-![Kanban Board](kanban-web.png)
-![Sign Up Page](signup.png)
+![Login Page](screenshots/login.png)
+![Dashboard](screenshots/dashboard-web.png)
+![Kanban Board](screenshots/kanban-web.png)
+![Sign Up Page](screenshots/signup.png)
 
 ### Mobile
-![Dashboard & Kanban Board – Mobile](dashboard-mobile.png)
+![Dashboard & Kanban Board – Mobile](screenshots/dashboard-mobile.png)
 
 ---
 
