@@ -1,19 +1,16 @@
-# 🎯 JobTracker — Job Application Tracking App
+# 🎮 Tic-Tac-Toe — Dynamic Board Game
 
-> A full-stack productivity app that helps job seekers organise, track, and manage their job applications — built because I needed it during my own job search.
+> A production-ready, fully responsive Tic-Tac-Toe game with a dynamic board size, move history, and draw detection — built as a deep-dive into clean Next.js architecture and component design.
 
-**🔗 Live Link:** [job-tracker.onyekaanene.com](https://job-tracker.onyekaanene.com) &nbsp;|&nbsp; **📂 Repo:** [github.com/onyekaanene/job-tracker](https://github.com/onyekaanene/job-tracker)  &nbsp;|&nbsp; **📧 Email: Questions, Comments & Suggestions:** [job-tracker@onyekaanene.com](mailto:job-tracker@onyekaanene.com)
-
-
-> 🚀 **No sign up needed** — click **Try Demo Account** on the login page to explore instantly.
+**🔗 Live Link:** [tictactoe.onyekaanene.com](https://tictactoe.onyekaanene.com) &nbsp;|&nbsp; **📂 Repo:** [github.com/onyekaanene/tic-tac-toe](https://github.com/onyekaanene/tic-tac-toe)
 
 ---
 
 ## 🚀 Why I Built This
 
-While actively job hunting as a Software Engineer, I found myself losing track of applications across spreadsheets, browser tabs, and sticky notes. I built JobTracker to solve that — a clean, fast, real-world app I actually use every day.
+The classic React Tic-Tac-Toe tutorial is a rite of passage — but the default implementation is not production-ready. I rebuilt it from scratch with a focus on correctness, scalability, and clean architecture: adding full TypeScript types, draw detection, accessibility, and a proper Next.js App Router structure with separated components.
 
-This project also gave me the opportunity to work with a modern full-stack architecture from scratch: **Next.js 14 App Router, TypeScript, Supabase Auth + PostgreSQL, and Zustand** — the kind of stack startups are shipping with right now.
+This project also served as a sandbox for practising **component-driven design**, **CSS container queries**, and **responsive layouts without a UI framework**.
 
 ---
 
@@ -21,96 +18,80 @@ This project also gave me the opportunity to work with a modern full-stack archi
 
 | Feature | Description |
 |---|---|
-| 🔐 Authentication | Secure sign up / login via Supabase Auth |
-| 🗂️ Kanban Board | Drag-and-drop applications across 5 stages |
-| 📊 Dashboard | Live stats cards + bar chart of your pipeline |
-| 💾 Persistent Storage | All data saved to PostgreSQL — survives refresh |
-| 📱 Responsive Design | Fully usable on mobile, tablet, and desktop |
-| 🔒 Row Level Security | Each user can only see and edit their own data |
-| ⚡ Optimistic UI | State updates instantly — no waiting for the server |
+| 🔢 Dynamic Board | Switch between 3×3, 4×4, and 5×5 boards on the fly |
+| 🏆 Win Detection | Works correctly for any board size — rows, columns, and both diagonals |
+| 🤝 Draw Detection | Declares a draw when the board is full with no winner |
+| 📜 Move History | Full move-by-move history with time travel — jump to any past state |
+| ♿ Accessible | `aria-label`, `aria-pressed`, `aria-current`, `role="grid"`, and live regions throughout |
+| 📱 Responsive | Three-column desktop layout collapses to a clean single-column stack on mobile |
+| 🎨 No UI Framework | Styled entirely with custom CSS using design tokens and container queries |
+| ⚡ Memoised Logic | `calculateWinner` and draw checks wrapped in `useMemo` — safe on large boards |
 
 ---
 
 ## 📸 Screenshots
-
 ### Desktop
-![Login Page](screenshots/login.png)
-![Dashboard](screenshots/dashboard-web.png)
-![Kanban Board](screenshots/kanban-web.png)
-![Sign Up Page](screenshots/signup.png)
-
-### Mobile
-![Dashboard & Kanban Board – Mobile](screenshots/dashboard-mobile.png)
+![Desktop Layout](screenshots/board.png)
 
 ---
 
 ## 🎬 App Walkthrough
 
-### Dashboard — Your pipeline at a glance
-Track total applications, active interviews, and offers with live stats that update as you move cards.
+### Three-Column Layout — Everything in view
+Controls sit in the left sidebar, the board is centred, and move history lives on the right. The board is always fully visible without scrolling — even on a 5×5 grid.
 
-### Kanban Board — Drag and drop
-Five columns: **Wishlist → Applied → Interview → Offer → Rejected**. Drag any card to update its status — changes are saved to the database in real time.
+### Dynamic Board Size
+Switch between 3×3, 4×4, and 5×5 at any time. The board, win logic, and history all reset automatically. The win algorithm works for any square board size.
 
-### Add Application Modal
-Log a new job in seconds — company, role, salary, location, job URL, and notes all in one place.
+### Move History — Time travel
+Every move is recorded. Click any entry in the history panel to jump back to that exact board state. The current move is always highlighted.
 
-### Auth Flow
-Secure email/password authentication with protected routes. Unauthenticated users are automatically redirected to login.
+### Draw Detection
+When all squares are filled with no winner, the game correctly declares a draw instead of leaving the status bar hanging on "Next player".
 
 ---
 
 ## 🛠️ Tech Stack
 
 ```
-Frontend       Next.js 14 (App Router) + TypeScript
-Styling        Tailwind CSS + shadcn/ui
-State          Zustand
-Auth           Supabase Auth
-Database       Supabase (PostgreSQL) with Row Level Security
-Charts         Recharts
-Drag & Drop    @hello-pangea/dnd
+Frontend       Next.js 15 (App Router) + TypeScript
+Styling        Custom CSS (design tokens, container queries)
+State          React useState + useCallback + useMemo
 Deployment     Vercel
 ```
 
 ### Architecture Decisions
 
-- **Next.js App Router** — chosen for its server component model, file-based routing, and built-in layout system. Layouts like the sidebar and navbar render once and persist across page navigations.
-- **Supabase** — provides both auth and a PostgreSQL database in one platform. Row Level Security policies are defined at the database level, not just the application layer.
-- **Zustand over Redux** — lightweight global state without boilerplate. Store actions map 1:1 to database operations, keeping the data layer predictable.
-- **Optimistic updates** — UI state updates immediately on user action while the async database call runs in the background, making the app feel instant.
+- **Next.js App Router** — `page.tsx` is a server component; the `"use client"` boundary sits at `Game.tsx`, keeping the server/client split clean and explicit.
+- **Separated components** — `Square`, `Board`, `GameControls`, `MoveHistory`, and `Game` are each in their own file with typed props, making the codebase easy to extend and test.
+- **Pure utility functions** — `calculateWinner` and `calculateDraw` live in `utils/` with no React dependencies, making them trivially unit-testable.
+- **CSS container queries** — the board uses `cqi` units so square sizes and symbol font sizes scale relative to the board's own width, not the viewport. This makes the board correct on every screen without media query hacks.
+- **No UI framework** — all styling is hand-written using CSS custom properties. This keeps the bundle lean and gives full control over every visual detail.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-job-tracker/
-├── app/                        # Next.js App Router
-│   ├── dashboard/page.tsx      # Stats + charts
-│   ├── applications/page.tsx   # Kanban board
-│   ├── settings/page.tsx       # Account settings
-│   ├── login/page.tsx          # Login page
-│   └── signup/page.tsx         # Signup page
+tic-tac-toe/
+├── app/
+│   ├── layout.tsx          # Root layout — Google Fonts via next/font
+│   ├── page.tsx            # Server component entry point
+│   └── globals.css         # All styles with CSS design tokens
 │
 ├── components/
-│   ├── dashboard/              # StatsCards, Chart, RecentList
-│   ├── kanban/                 # Board, Column, JobCard, Modal
-│   ├── layout/                 # Sidebar, Navbar, AppLayout
-│   ├── settings/               # SettingsForm
-│   └── ui/                     # shadcn/ui base components
+│   └── game/
+│       ├── Game.tsx         # State owner — all game logic lives here
+│       ├── Board.tsx        # Renders the grid, memoises win/draw
+│       ├── Square.tsx       # Single cell — accessible button
+│       ├── GameControls.tsx # Board size selector + New Game button
+│       └── MoveHistory.tsx  # Scrollable history with time travel
 │
-├── lib/
-│   ├── supabase/               # Browser + server Supabase clients
-│   └── applications.ts         # All database query functions
+├── utils/
+│   └── calculateWinner.ts  # Pure win + draw logic, works for any NxN board
 │
-├── store/
-│   └── useApplicationStore.ts  # Zustand store + actions
-│
-├── types/
-│   └── index.ts                # Shared TypeScript types
-│
-└── proxy.ts                    # Auth route protection
+└── types/
+    └── tictactoe.ts        # All shared TypeScript interfaces and types
 ```
 
 ---
@@ -118,41 +99,33 @@ job-tracker/
 ## 🗺️ Roadmap
 
 ### ✅ Completed
-- [x] Email / password authentication with Supabase Auth
-- [x] Protected routes — unauthenticated users redirected to login
-- [x] Kanban board with drag-and-drop across 5 stages
-- [x] Add / delete job applications via modal form
-- [x] Dashboard with live stats cards and bar chart
-- [x] Recent applications list on dashboard
-- [x] Persistent storage with PostgreSQL via Supabase
-- [x] Row Level Security — users only access their own data
-- [x] Fully responsive — mobile and desktop
-- [x] One-click demo account for instant access
-- [x] Settings page with password update
+- [x] Dynamic board size — 3×3, 4×4, 5×5
+- [x] Win detection for any square board size
+- [x] Draw detection
+- [x] Move history with time travel
+- [x] New Game button with full state reset
+- [x] Board size validation and safe fallback
+- [x] Full TypeScript types
+- [x] Accessibility — aria labels, live regions, keyboard navigation
+- [x] Three-column responsive layout
+- [x] Mobile single-column stack
 - [x] Deployed live on Vercel
 
 ### 🔜 Coming Soon
-- [ ] Google OAuth login
-- [ ] Edit application details inline
-- [ ] Notes and activity timeline per application
-- [ ] Follow-up reminders and deadline alerts
-- [ ] CSV export of all applications
-- [ ] React Native mobile companion app
+- [ ] AI opponent (Minimax algorithm)
+- [ ] Score tracking across rounds
+- [ ] Animated winning line drawn across the board
+- [ ] Custom player names
+- [ ] Local multiplayer on the same device
 
 ---
 
 ## 🙏 Acknowledgements
 
-This project was built with the help of some excellent open source tools and communities:
-
-- [Next.js](https://nextjs.org) — for the most seamless React framework experience
-- [Supabase](https://supabase.com) — for making auth and PostgreSQL incredibly approachable
-- [shadcn/ui](https://ui.shadcn.com) — for beautiful, accessible UI components that don't get in your way
-- [Tailwind CSS](https://tailwindcss.com) — for making styling fast and consistent
-- [Recharts](https://recharts.org) — for composable and easy-to-use React charts
-- [@hello-pangea/dnd](https://github.com/hello-pangea/dnd) — for smooth drag-and-drop interactions
-- [Zustand](https://zustand-demo.pmnd.rs) — for keeping global state simple and boilerplate-free
-- [Lucide Icons](https://lucide.dev) — for clean, consistent iconography
+- [Next.js](https://nextjs.org) — for the cleanest React framework experience
+- [React Docs — Tic-Tac-Toe Tutorial](https://react.dev/learn/tutorial-tic-tac-toe) — the original tutorial this project is built on top of and beyond
+- [MDN — CSS Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries) — essential for the responsive board scaling
+- [Syne](https://fonts.google.com/specimen/Syne) & [Space Mono](https://fonts.google.com/specimen/Space+Mono) — for the display and symbol fonts via Google Fonts
 - [Vercel](https://vercel.com) — for effortless deployment and hosting
 
 ---
@@ -161,66 +134,32 @@ This project was built with the help of some excellent open source tools and com
 
 ### Prerequisites
 - Node.js 18+
-- A free [Supabase](https://supabase.com) account
+- pnpm, npm, or yarn
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/onyekaanene/job-tracker.git
-cd job-tracker
+git clone https://github.com/onyekaanene/tic-tac-toe.git
+cd tic-tac-toe
 npm install
 ```
 
-### 2. Set up environment variables
-Create a `.env.local` file in the root:
-```
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
-```
-
-### 3. Set up the database
-Run the following SQL in your Supabase SQL editor:
-
-```sql
-create table applications (
-  id uuid default gen_random_uuid() primary key,
-  user_id uuid references auth.users(id) on delete cascade not null,
-  company_name text not null,
-  role text not null,
-  status text not null default 'applied',
-  applied_date text,
-  job_url text,
-  salary text,
-  location text,
-  notes text,
-  created_at timestamp with time zone default now()
-);
-
-alter table applications enable row level security;
-
-create policy "Users can view own applications" on applications
-  for select using (auth.uid() = user_id);
-
-create policy "Users can insert own applications" on applications
-  for insert with check (auth.uid() = user_id);
-
-create policy "Users can update own applications" on applications
-  for update using (auth.uid() = user_id);
-
-create policy "Users can delete own applications" on applications
-  for delete using (auth.uid() = user_id);
-```
-
-### 4. Run the app
+### 2. Run the app
 ```bash
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000)
 
+No environment variables or database setup needed — the app is entirely client-side.
+
 ---
 
 ## 🚢 Deployment
 
-The app is deployed on **Vercel** with environment variables configured in the Vercel dashboard. Supabase URL Configuration is updated to allow auth redirects from the production domain.
+The app is deployed on **Vercel** with zero configuration. Push to `main` and it deploys automatically.
+
+```bash
+vercel --prod
+```
 
 ---
 
