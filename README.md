@@ -54,7 +54,7 @@ When all squares are filled with no winner, the game correctly declares a draw i
 ## 🛠️ Tech Stack
 
 ```
-Frontend       Next.js 15 (App Router) + TypeScript
+Frontend       Next.js 16 (App Router) + TypeScript
 Styling        Custom CSS (design tokens, container queries)
 State          React useState + useCallback + useMemo
 Deployment     Vercel
