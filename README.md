@@ -2,7 +2,7 @@
 
 > A full-stack productivity app that helps job seekers organise, track, and manage their job applications — built because I needed it during my own job search.
 
-**🔗 Live Link:** [job-tracker.onyekaanene.com](https://job-tracker.onyekaanene.com) &nbsp;|&nbsp; **📂 Repo:** [github.com/onyekaanene/job-tracker](https://github.com/onyekaanene/job-tracker)  &nbsp;|&nbsp; **📧 Email: Questions, Comments & Suggestions:** [job-tracker@onyekaanene.com](mailto:job-tracker@onyekaanene.com)
+**🔗 Live Link Demo:** [job-tracker.onyekaanene.com](https://job-tracker.onyekaanene.com) &nbsp;|&nbsp; **📂 Repo:** [github.com/onyekaanene/job-tracker](https://github.com/onyekaanene/job-tracker)  &nbsp;|&nbsp; **📧 Email: Questions, Comments & Suggestions:** [job-tracker@onyekaanene.com](mailto:job-tracker@onyekaanene.com)
 
 
 > 🚀 **No sign up needed** — click **Try Demo Account** on the login page to explore instantly.
