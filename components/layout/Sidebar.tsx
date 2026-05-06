@@ -50,6 +50,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             <X size={20} />
           </button>
         </div>
+        
 
         {/* Navigation Links */}
         <nav className="p-4 flex flex-col gap-1">
