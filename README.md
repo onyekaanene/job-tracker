@@ -1,6 +1,6 @@
 # 🎯 Job Tracker — Job Application Tracking App
 
-> A full-stack productivity app that helps job seekers organise, track, and manage their job applications — built because I needed it during my own job search.
+> Job Tracker is a full-stack productivity app that helps job seekers organise, track, and manage their job applications — built because I needed it during my own job search.
 
 **🔗 Live Link Demo:** [job-tracker.onyekaanene.com](https://job-tracker.onyekaanene.com) &nbsp;|&nbsp; **📂 Repo:** [github.com/onyekaanene/job-tracker](https://github.com/onyekaanene/job-tracker)  &nbsp;|&nbsp; **📧 Email: Questions, Comments & Suggestions:** [job-tracker@onyekaanene.com](mailto:job-tracker@onyekaanene.com)
 
