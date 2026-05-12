@@ -134,6 +134,7 @@ job-tracker/
 ### 🔜 Coming Soon
 - [ ] Google OAuth login
 - [ ] Edit application details inline
+- [ ] AI Analysis of GitHub Repo (For Developers)
 - [ ] Notes and activity timeline per application
 - [ ] Follow-up reminders and deadline alerts
 - [ ] CSV export of all applications
