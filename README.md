@@ -237,4 +237,4 @@ The app is deployed on **Vercel** with environment variables configured in the V
 
 ## 📄 License
 
-MIT — feel free to fork, use, and build on this.
+MIT — feel free to fork, use, and build on this code.
