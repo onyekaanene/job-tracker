@@ -1,4 +1,4 @@
-"use client";
+"use client"; // This is a client component because it uses state and effects
 
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
