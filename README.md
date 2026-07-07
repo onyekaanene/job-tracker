@@ -12,7 +12,7 @@
 
 ## 🚀 Why I Built This
 
-While actively job hunting as a Frontend Engineer, I found myself losing track of applications across spreadsheets, browser tabs, and sticky notes. I built JobTracker to solve that — a clean, fast, real-world app I actually use every day.
+While actively job hunting, job seekers lose track of applications across spreadsheets, browser tabs, and sticky notes. I built JobTracker to solve that — a clean, fast, real-world app a job seeker could use every day.
 
 Beyond the tracking problem, I wanted to explore what genuine AI integration looks like inside a product — not a chatbot bolted on the side, but AI that fits naturally into the workflow. The result is three AI features powered by the Claude API that make the job search meaningfully faster.
 
