@@ -2,6 +2,7 @@ import AppLayout from "@/components/layout/AppLayout";
 import StatsCards from "@/components/dashboard/StatsCards";
 import ApplicationsChart from "@/components/dashboard/ApplicationsChart";
 import RecentApplications from "@/components/dashboard/RecentApplications";
+import AIInsights from "@/components/dashboard/AIInsights";
 
 export default function DashboardPage() {
   return (
@@ -15,10 +16,12 @@ export default function DashboardPage() {
 
       <StatsCards />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <ApplicationsChart />
-        <RecentApplications />
+        <AIInsights />
       </div>
+
+      <RecentApplications />
     </AppLayout>
   );
 }
