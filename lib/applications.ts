@@ -3,8 +3,8 @@ import { Application, ApplicationStatus } from "@/types";
 
 const supabase = createClient();
 
-// Helper to convert database row (snake_case) to our App type (camelCase)
-function toApplication(row: Record<string, string>): Application {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function toApplication(row: Record<string, any>): Application {
   return {
     id: row.id,
     companyName: row.company_name,
@@ -63,14 +63,16 @@ export async function updateApplicationInDb(
   const { error } = await supabase
     .from("applications")
     .update({
-      company_name: updates.companyName,
-      role: updates.role,
-      status: updates.status,
-      applied_date: updates.appliedDate,
-      job_url: updates.jobUrl,
-      salary: updates.salary,
-      location: updates.location,
-      notes: updates.notes,
+      ...(updates.companyName && { company_name: updates.companyName }),
+      ...(updates.role && { role: updates.role }),
+      ...(updates.status && { status: updates.status }),
+      ...(updates.appliedDate !== undefined && {
+        applied_date: updates.appliedDate,
+      }),
+      ...(updates.jobUrl !== undefined && { job_url: updates.jobUrl }),
+      ...(updates.salary !== undefined && { salary: updates.salary }),
+      ...(updates.location !== undefined && { location: updates.location }),
+      ...(updates.notes !== undefined && { notes: updates.notes }),
     })
     .eq("id", id);
 

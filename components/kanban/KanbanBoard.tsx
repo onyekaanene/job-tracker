@@ -16,16 +16,15 @@ const STATUSES: ApplicationStatus[] = [
 ];
 
 export default function KanbanBoard() {
-  const { applications, moveApplication, loadApplications, loading } =
-    useApplicationStore();
+  const { applications, moveApplication, loading } = useApplicationStore();
   const [modalOpen, setModalOpen] = useState(false);
   const [defaultStatus, setDefaultStatus] =
     useState<ApplicationStatus>("applied");
 
   // Load data from Supabase when component mounts
-  useEffect(() => {
+  /*useEffect(() => {
     loadApplications();
-  }, []);
+  }, []);*/
 
   const handleDragEnd = (result: DropResult) => {
     const { destination, source, draggableId } = result;

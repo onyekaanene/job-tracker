@@ -9,6 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Cell,
 } from "recharts";
 
 export default function ApplicationsChart() {
@@ -73,7 +74,7 @@ export default function ApplicationsChart() {
           />
           <Bar dataKey="count" radius={[6, 6, 0, 0]}>
             {data.map((entry, index) => (
-              <rect key={index} fill={entry.fill} />
+              <Cell key={index} fill={entry.fill} />
             ))}
           </Bar>
         </BarChart>
