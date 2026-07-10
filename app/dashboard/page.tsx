@@ -4,6 +4,7 @@ import ApplicationsChart from "@/components/dashboard/ApplicationsChart";
 import RecentApplications from "@/components/dashboard/RecentApplications";
 import AIInsights from "@/components/dashboard/AIInsights";
 
+
 export default function DashboardPage() {
   return (
     <AppLayout>

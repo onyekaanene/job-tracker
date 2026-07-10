@@ -6,16 +6,19 @@ import { Sparkles, Loader2, RefreshCw } from "lucide-react";
 
 export default function AIInsights() {
   const applications = useApplicationStore((s) => s.applications);
+  const loading = useApplicationStore((s) => s.loading);
   const [insights, setInsights] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [fetching, setFetching] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (applications.length > 0) fetchInsights();
-  }, []);
+    if (applications.length > 0 && !loading) {
+      fetchInsights();
+    }
+  }, [applications.length, loading]);
 
   const fetchInsights = async () => {
-    setLoading(true);
+    setFetching(true);
     setError("");
 
     try {
@@ -36,7 +39,7 @@ export default function AIInsights() {
     } catch {
       setError("Could not load insights right now.");
     } finally {
-      setLoading(false);
+      setFetching(false);
     }
   };
 
@@ -57,16 +60,27 @@ export default function AIInsights() {
         </div>
         <button
           onClick={fetchInsights}
-          disabled={loading}
-          className="text-gray-400 hover:text-gray-600 transition-colors"
+          disabled={fetching || loading}
+          className="text-gray-400 hover:text-gray-600 transition-colors disabled:opacity-50"
           title="Refresh insights"
         >
-          <RefreshCw size={14} className={loading ? "animate-spin" : ""} />
+          <RefreshCw size={14} className={fetching ? "animate-spin" : ""} />
         </button>
       </div>
 
-      {/* Content */}
+      {/* Loading state — store still fetching data */}
       {loading && (
+        <div className="flex items-center gap-3 py-4">
+          <Loader2
+            size={16}
+            className="animate-spin text-blue-400 flex-shrink-0"
+          />
+          <p className="text-sm text-gray-400">Loading your data...</p>
+        </div>
+      )}
+
+      {/* Fetching insights from Claude */}
+      {fetching && !loading && (
         <div className="flex items-center gap-3 py-4">
           <Loader2
             size={16}
@@ -78,19 +92,22 @@ export default function AIInsights() {
         </div>
       )}
 
-      {error && !loading && (
+      {/* Error state */}
+      {error && !fetching && (
         <p className="text-sm text-red-400 bg-red-50 px-3 py-2 rounded-lg">
           {error}
         </p>
       )}
 
-      {insights && !loading && (
+      {/* Insights */}
+      {insights && !fetching && !loading && (
         <p className="text-sm text-gray-600 leading-7 whitespace-pre-wrap">
           {insights}
         </p>
       )}
 
-      {!insights && !loading && !error && (
+      {/* Empty state — no applications yet */}
+      {!insights && !fetching && !loading && !error && (
         <p className="text-sm text-gray-400">
           Add some applications to get personalised insights.
         </p>

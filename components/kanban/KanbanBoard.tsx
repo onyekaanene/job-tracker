@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { DragDropContext, DropResult } from "@hello-pangea/dnd";
 import { useApplicationStore } from "@/store/useApplicationStore";
 import { ApplicationStatus } from "@/types";
@@ -20,11 +20,6 @@ export default function KanbanBoard() {
   const [modalOpen, setModalOpen] = useState(false);
   const [defaultStatus, setDefaultStatus] =
     useState<ApplicationStatus>("applied");
-
-  // Load data from Supabase when component mounts
-  /*useEffect(() => {
-    loadApplications();
-  }, []);*/
 
   const handleDragEnd = (result: DropResult) => {
     const { destination, source, draggableId } = result;
