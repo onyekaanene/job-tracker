@@ -44,9 +44,9 @@ export default function AddJobModal({
   if (!isOpen) return null;
 
   const handleChange = (
-    e: React.ChangeEvent
+    e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -71,7 +71,6 @@ export default function AddJobModal({
         return;
       }
 
-      // Fill the form with parsed data
       setFormData({
         companyName: data.companyName || "",
         role: data.role || "",
@@ -84,7 +83,6 @@ export default function AddJobModal({
       });
 
       setParsed(true);
-      // Switch to manual tab so user can review and edit
       setTab("manual");
     } catch {
       setParseError("Something went wrong. Please try again.");

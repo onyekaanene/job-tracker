@@ -37,7 +37,9 @@ export default function JobCard({ application, index }: JobCardProps) {
                 <h3 className="font-semibold text-gray-900 text-sm">
                   {application.companyName}
                 </h3>
-                <p className="text-gray-500 text-xs mt-0.5">{application.role}</p>
+                <p className="text-gray-500 text-xs mt-0.5">
+                  {application.role}
+                </p>
               </div>
               <button
                 onClick={() => deleteApplication(application.id)}
@@ -71,7 +73,6 @@ export default function JobCard({ application, index }: JobCardProps) {
                   : "Not applied yet"}
               </span>
               <div className="flex items-center gap-2">
-                {/* Cover Letter Button */}
                 <button
                   onClick={() => setCoverLetterOpen(true)}
                   className="flex items-center gap-1 text-xs text-blue-400 hover:text-blue-600 transition-colors"
