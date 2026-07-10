@@ -84,6 +84,7 @@ export default function JobCard({ application, index }: JobCardProps) {
 
                 {application.jobUrl && (
                   
+                  <a
                     href={application.jobUrl}
                     target="_blank"
                     rel="noopener noreferrer"
