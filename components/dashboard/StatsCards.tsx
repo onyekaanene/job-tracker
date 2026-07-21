@@ -3,7 +3,9 @@
 import { useApplicationStore } from "@/store/useApplicationStore";
 import { Briefcase, Send, MessageSquare, Trophy } from "lucide-react";
 
+
 export default function StatsCards() {
+  const loading = useApplicationStore((s) => s.loading);
   const applications = useApplicationStore((s) => s.applications);
 
   const stats = [
@@ -36,6 +38,22 @@ export default function StatsCards() {
       bg: "bg-green-50",
     },
   ];
+
+  if (loading) {
+    return (
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        {[1, 2, 3, 4].map((i) => (
+          <div
+            key={i}
+            className="bg-white rounded-2xl border border-gray-200 p-5 h-[88px] animate-pulse"
+          >
+            <div className="w-10 h-10 bg-gray-100 rounded-xl mb-2" />
+            <div className="w-16 h-4 bg-gray-100 rounded" />
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">

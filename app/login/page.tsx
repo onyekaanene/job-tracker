@@ -28,11 +28,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [demoLoading, setDemoLoading] = useState(false);
 
-  const signIn = async (
-    emailVal: string,
-    passwordVal: string,
-    isDemo = false,
-  ) => {
+  const signIn = async (emailVal: string, passwordVal: string, isDemo = false) => {
     if (isDemo) setDemoLoading(true);
     else setLoading(true);
     setError("");
@@ -49,9 +45,12 @@ export default function LoginPage() {
       return;
     }
 
-    router.push("/dashboard");
-    router.refresh();
-  };
+    // router.push("/dashboard");
+    // router.refresh();
+    
+    // Full page reload ensures the proxy sees the fresh session cookie
+    window.location.href = "/dashboard";
+  };;
 
   const handleLogin = () => signIn(email, password);
   const handleDemoLogin = () => signIn(DEMO_EMAIL, DEMO_PASSWORD, true);
